@@ -40,12 +40,18 @@ function handleInput(letter, keyElement = null) {
       keyElement.classList.add("clicked");
       setTimeout(() => keyElement.classList.remove("clicked"), 200);
     }
+
+    // Auto-check when word is fully typed
+    if (currentInput.length === word.length) {
+      setTimeout(checkAnswer, 300); // delay to allow UI update
+    }
   }
 }
 
 function checkAnswer() {
   if (currentInput === word) {
     videoContainer.style.display = "block";
+    video.currentTime = 0;
     video.play().then(() => {
       if (video.requestFullscreen) {
         video.requestFullscreen();

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spell the Word</title>
+  <link rel="stylesheet" href="spell.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="home">
+    <div class="wrapper-center">
+      <h1 class="game-title">Spell the Word</h1>
+      <p id="question" class="instruction">Spell: <strong>MULTO</strong></p>
+      <div class="word-container" id="wordDisplay">_ _ _ _ _</div>
+      <div class="keyboard" id="keyboard"></div>
+    </div>
+
+    <div id="videoContainer">
+      <video id="video" controls>
+        <source src="multo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="spell.js"></script>
+</body>
+</html>

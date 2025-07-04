@@ -1,0 +1,136 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.wrapper-center {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.game-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.word-container {
+  font-size: 3rem;
+  letter-spacing: 1.5rem;
+  color: #111;
+  margin-bottom: 40px;
+  word-break: break-word;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 12px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+}
+
+.key {
+  height: 55px;
+  font-size: 20px;
+  background: #ffffff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.key:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.key.clicked {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.key.enter {
+  grid-column: span 2;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+
+.key.enter::before {
+  content: "⏎";
+  position: absolute;
+  left: 10px;
+  font-size: 1.2em;
+  opacity: 0.3;
+}
+
+#videoContainer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 6vw;
+  }
+
+  .word-container {
+    font-size: 9vw;
+    letter-spacing: 1vw;
+  }
+
+  .key {
+    font-size: 5vw;
+    height: 12vw;
+  }
+}
